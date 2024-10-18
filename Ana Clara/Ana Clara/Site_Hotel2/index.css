@@ -1,0 +1,271 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('imagens/fundo.jpg') center/cover no-repeat; /* Background imagem */
+    display: grid;
+    place-items: center; /* Centraliza o conteúdo no centro da tela */
+    height: 100vh; /* Altura total da viewport */
+    overflow: hidden; /* Remove barra de rolagem */
+}
+
+.formHotel {
+    position: relative;
+    background-color: white;
+    width: 400px;
+    padding: 20px;
+    border: 4px solid black; /* Borda preta */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombreado */
+    border-radius: 15px; /* Borda arredondada */
+    text-align: center;
+    z-index: 1; /* Garante que o formulário fique sobre o fundo */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('imagens/fundo.jpg'); /* Use uma imagem de alta resolução */
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* Ajuste o valor para controlar o desfoque */
+    z-index: -1; /* Coloca o fundo atrás de todo o conteúdo */
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Coloca o conteúdo sobre o fundo */
+    text-align: center;
+    color: white;
+    padding: 100px 20px 20px; /* Ajuste o padding para acomodar a barra de navegação */
+}
+
+h1 {
+    font-size: 2.5em;
+    color: black;
+}
+
+p {
+    font-size: small;
+    color: black;
+}
+
+a {
+    font-size: small;
+}
+
+label {
+    color: black;
+    display: block; /* Torna os labels como blocos para aplicar o background */
+    padding: 5px; /* Adiciona espaçamento interno aos labels */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"] {
+    width: calc(100% - 12px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(216, 216, 216, 0.425); /* Cor de fundo bege para os inputs */
+    box-sizing: border-box; /* Inclui padding e border no width e height */
+}
+
+input {
+    text-align: center;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px; /* Borda arredondada */
+    background-color: rgba(128, 128, 128, 0.856); /* Cor de fundo inicial */
+    color: black;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave para a mudança de cor */
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(201, 181, 152); /* Cor de fundo ao passar o mouse */
+    color: black; /* Cor do texto */
+}
+
+.signup-link {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-top: 10px; /* Adiciona um espaço acima do link */
+}
+
+.signup-link p {
+    margin-right: 5px; /* Adiciona um espaço à direita do parágrafo */
+}
+
+.btnExcluir {
+    width: 175px;
+    height: 30px;
+    background-color: rgba(128, 128, 128, 0.856);
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    border-color: #000;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0 !important;
+}
+
+.btnExcluir:hover {
+    transform: scale(1.05);
+    background-color: #f31e1ecc;
+}
+
+.btnEditar {
+    width: 175px;
+    height: 30px;
+    background-color: rgba(128, 128, 128, 0.856);
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    border-color: #000;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0 !important;
+}
+
+.btnEditar:hover {
+    transform: scale(1.05);
+    background-color: #f3e11efe;
+}
+
+#divleft {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+    height: 50px;
+    margin-top: 25px;
+}
+
+#divright {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+    height: 50px;
+    text-align: right;
+    margin-top: 25px;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo da barra de navegação com transparência */
+    position: fixed; /* Garante que a navbar fique fixa no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    z-index: 1000; /* Garante que a navbar fique sobre o fundo e outros conteúdos */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaço entre o logo e os botões de autenticação */
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    width: 100%;
+    justify-content: space-between; /* Distribui espaço uniformemente entre logo e botões */
+}
+
+.logo img {
+    height: 40px; /* Ajuste conforme o tamanho do logo */
+    width: auto; /* Mantém a proporção do logo */
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 10px; /* Adiciona um pequeno espaço à esquerda do botão */
+}
+
+/* Adiciona uma regra para o menu ocupar toda a altura e largura do lado esquerdo */
+.navbar ul {
+    position: fixed; /* Posiciona o menu fixo em relação à tela */
+    top: 39px; /* Posiciona o menu logo abaixo da navbar */
+    left: 0; /* Alinha o menu à esquerda da tela */
+    width: 250px; /* Define a largura do menu */
+    height: calc(100vh - 50px); /* Ocupa a altura total da tela menos a altura da navbar */
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo escura e mais opaca para destaque */
+    backdrop-filter: blur(5px);
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 20px; /* Adiciona padding interno para o menu */
+    box-sizing: border-box;
+    z-index: 999; /* Garante que o menu fique sobre o conteúdo */
+    overflow-y: auto; /* Adiciona rolagem vertical se o conteúdo exceder a altura do menu */
+    transform: translateX(-100%); /* Inicialmente esconde o menu fora da tela */
+    transition: transform 0.3s ease; /* Transição suave para mostrar/esconder o menu */
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Faz o menu ocupar toda a tela ao ser ativado */
+.navbar ul.active {
+    transform: translateX(0); /* Move o menu para a posição visível */
+}
+
+/* Estiliza os itens do menu */
+.navbar ul li {
+    margin-bottom: 20px; /* Aumenta o espaçamento entre os itens do menu */
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block; /* Garante que o padding e margin afetem o item corretamente */
+    padding: 10px 0; /* Adiciona padding para aumentar a área clicável */
+}
+
+.navbar ul li:last-child {
+    margin-top: auto; /* Empurra o último item para a parte inferior do menu */
+    margin-bottom: 3px;
+}
+
+.forms-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btnVoltar {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    text-decoration: none;
+    color: black; /* Define a cor da seta */
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.btnVoltar:hover {
+    color: gray; /* Muda a cor ao passar o mouse */
+}
+
+.btnVoltar svg {
+    width: 30px; /* Ajusta o tamanho do ícone */
+    height: 24px;
+}
+

@@ -1,0 +1,360 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo da barra de navegação com transparência */
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    z-index: 2; /* Coloca a barra de navegação sobre o fundo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaço entre o logo e os botões de autenticação */
+    position: fixed;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center; /* Centraliza todo o conteúdo */
+}
+
+.navbar-content .logo {
+    margin-right: auto; /* Garante que o logo fique à esquerda */
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('imagens/fundo.jpg'); /* Use uma imagem de alta resolução */
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* Ajuste o valor para controlar o desfoque */
+    z-index: -1; /* Coloca o fundo atrás de todo o conteúdo */
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Coloca o conteúdo sobre o fundo */
+    text-align: center;
+    color: white;
+    padding: 100px 20px 20px; /* Ajuste o padding para acomodar a barra de navegação */
+}
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+a {
+    color: white;
+}
+
+.rooms-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.rooms-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: white; /* Para manter a consistência com o tema */
+}
+
+.rooms-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.room {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 450px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente para combinar com o fundo da página */
+}
+
+.room img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.room-details {
+    padding: 15px;
+    color: white; /* Para manter a legibilidade no fundo escuro */
+}
+
+.room-details h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.room-details p {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.room-details .price {
+    font-size: 1.2em;
+    color: #d9534f;
+}
+
+.room-details .book-btn {
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.menu-btn {
+    position: absolute; /* Mova o botão do menu para a esquerda */
+    left: 20px; /* Alinhamento à esquerda */
+}
+
+/* Adiciona uma regra para o menu ocupar toda a altura e largura do lado esquerdo */
+.navbar ul {
+    position: absolute; /* Muda para absolute para posicionar o menu dentro da navbar */
+    top: 4.7%; /* Posiciona o menu logo abaixo da navbar */
+    left: 0; /* Alinha o menu à esquerda da navbar */
+    width: 250px; /* Define a largura do menu */
+    height: calc(100vh - 50px); /* Ocupa a altura total da tela menos a altura da navbar */
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo escura e mais opaca para destaque */
+    backdrop-filter: blur(5px);
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 20px; /* Adiciona padding interno para o menu */
+    box-sizing: border-box;
+    z-index: 1; /* Garante que o menu fique sobre o conteúdo */
+    overflow-y: auto; /* Adiciona rolagem vertical se o conteúdo exceder a altura do menu */
+    transform: translateX(-100%); /* Inicialmente esconde o menu fora da tela */
+    transition: transform 0.3s ease; /* Transição suave para mostrar/esconder o menu */
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Faz o menu ocupar toda a tela ao ser ativado */
+.navbar ul.active {
+    transform: translateX(0); /* Move o menu para a posição visível */
+}
+
+/* Estiliza os itens do menu */
+.navbar ul li {
+    margin-bottom: 20px; /* Aumenta o espaçamento entre os itens do menu */
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block; /* Garante que o padding e margin afetem o item corretamente */
+    padding: 10px 0; /* Adiciona padding para aumentar a área clicável */
+}
+
+.navbar ul li:last-child {
+    margin-top: auto; /* Empurra o último item para a parte inferior do menu */
+    margin-bottom: 3px;
+}
+
+.reserva-container {
+    background: rgba(255, 255, 255, 0.959);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px; /* Ajuste conforme necessário */
+    width: 100%;
+    display: flex; /* Exibe o formulário e a imagem lado a lado */
+    gap: 20px; /* Espaço entre o formulário e a imagem */
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+    
+    /* Centralização horizontal e vertical */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form {
+    flex: 1; /* Permite que o formulário ocupe o espaço disponível */
+}
+
+.imagem-container {
+    display: flex;
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    align-items: center; /* Centraliza a imagem verticalmente */
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+    margin-top: 150px; /* Ajuste o valor conforme necessário */
+}
+
+#quarto-imagem {
+    width: 100%; /* A imagem ocupará 100% da largura disponível */
+    max-width: 380px; /* Limite máximo de largura */
+    height: auto; /* Manter a proporção da imagem */
+    border-radius: 10px; /* Bordas arredondadas */
+    border: 2px solid black; /* Adiciona uma borda preta de 5px */
+    display: none; /* Inicialmente oculta a imagem */
+}
+
+/* Adiciona estilos para o formulário */
+label {
+    margin-bottom: 5px;
+    color: #2c2b2b;
+}
+
+input[type="date"],
+input[type="number"],
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #e9e9e9;
+}
+
+button {
+    padding: 10px;
+    background-color: rgb(93, 91, 91);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#numero_criancas:disabled {
+    background-color: #e9e9e9;
+    cursor: not-allowed;
+}
+
+@media screen and (max-width: 480px) {
+    .reserva-container {
+        padding: 15px;
+        max-width: 300px;
+        flex-direction: column; /* Alinha o conteúdo em coluna para telas menores */
+    }
+
+    .imagem-container {
+        display: none; /* Oculta a imagem em telas menores */
+    }
+
+    input[type="date"],
+    input[type="number"],
+    select,
+    button {
+        font-size: 14px;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+label {
+    margin-bottom: 5px;
+    color: #2c2b2b;
+}
+
+input[type="date"],
+input[type="number"],
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #e9e9e9;
+}
+
+button {
+    padding: 10px;
+    background-color: rgb(93, 91, 91);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#numero_criancas:disabled {
+    background-color: #e9e9e9;
+    cursor: not-allowed;
+}
+
+@media screen and (max-width: 480px) {
+    .reserva-container {
+        padding: 15px;
+        max-width: 300px;
+    }
+
+    input[type="date"],
+    input[type="number"],
+    select,
+    button {
+        font-size: 14px;
+    }
+}
+
+.label-container {
+    display: flex;
+    align-items: center;
+}
+
+#divleft {
+    float:inline-end;
+    width: 50%;
+    margin-right: 2%;
+    height: 80px;
+    margin-top: 200px;
+}

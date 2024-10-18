@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo da barra de navegação com transparência */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 2; /* Coloca a barra de navegação sobre o fundo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaço entre o logo e os botões de autenticação */
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    width: 100%;
+    justify-content: space-between; /* Distribui espaço uniformemente entre logo e botões */
+}
+
+.logo img {
+    height: 40px; /* Ajuste conforme o tamanho do logo */
+    width: auto; /* Mantém a proporção do logo */
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(158, 142, 123);
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Ajuste o valor para controlar o desfoque */
+    z-index: -1; /* Coloca o fundo atrás de todo o conteúdo */
+}
+
+/* CSS existente */
+
+/* Atualizado para fundo transparente cinza claro */
+.hotel-summary {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(180, 172, 172, 0.5); /* Fundo branco com opacidade 80% */
+    border: 2px solid black; /* Borda cinza claro com opacidade */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    text-align: center;
+}
+
+.hotel-summary h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.hotel-summary p {
+    font-size: 16px;
+    line-height: 1.6;
+}
